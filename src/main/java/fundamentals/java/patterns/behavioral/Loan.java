@@ -1,4 +1,4 @@
-package fundamentals.patterns.behavioral;
+package fundamentals.java.patterns.behavioral;
 
 class MyResource implements AutoCloseable {
     private int level;
@@ -32,8 +32,8 @@ class MyResource implements AutoCloseable {
  */
 public class Loan {
     public static void main(String[] args) {
-    // Create and use a resource of MyResource type.
-    // Its close() method will be called automatically */
+        // Create and use a resource of MyResource type.
+        // Its close() method will be called automatically */
         try (MyResource mr = new MyResource(2, false)) {
             mr.use();
             mr.use();
