@@ -12,6 +12,11 @@ class MHidingSub extends MHidingSuper {
     }
 }
 
+/**
+ * A class also inherits all non-private static methods from its superclass.
+ * Redefining an inherited static method in a class is known as method hiding.
+ * Early binding is used for static methods.
+ */
 public class MethodHiding {
     public static void main(String[] args) {
         MHidingSuper mhSuper = new MHidingSub();
