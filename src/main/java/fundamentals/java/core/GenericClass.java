@@ -1,10 +1,14 @@
 package fundamentals.java.core;
 
-public class GenericClass<A, B> {
-    void methodWithTypeParameter(A a) {
-
+public class GenericClass<T> {
+    private void foo(T a) {
     }
-    <C> void methodWithTypeParameter1(C c) {
 
+    private <V> void foo(Wrapper<V> a, Wrapper<V> b, T c) {
+    }
+
+    public static void main(String[] args) {
+        GenericClass<Integer> g = new GenericClass<>();
+        g.foo(new Wrapper<String>("str1"), new Wrapper<String>("str2"), 100);
     }
 }

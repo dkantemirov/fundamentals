@@ -5,9 +5,18 @@ class User(val name: String) extends Identification
 class SuperUser(name: String) extends User(name)
 
 /**
-  * Boilerplate Java analog [[fundamentals.java.core.Variance]].
-  */
+ * Boilerplate Java analog [[fundamentals.java.core.Variance]].
+ *
+ * Scala supports variance annotations of type parameters of generic classes,
+ * to allow them to be covariant, contravariant, or invariant if no annotations are used.
+ */
 object Variance extends App {
+  object Annotations extends App {
+    class Foo[+A] // A covariant class
+    class Bar[-A] // A contravariant class
+    class Baz[A] // An invariant class
+  }
+
   object Covariance {
     // Covariant type parameter by default impl List[+A]
     def show(list: List[User]): Unit = list.foreach(u => println(u.name))
@@ -15,7 +24,7 @@ object Variance extends App {
 
   object Contravariance {
     // Lower bound
-    def show[T >: SuperUser](list: List[T]): Unit = list.foreach(println)
+    def show[A >: SuperUser](list: List[A]): Unit = list.foreach(println)
   }
 
   object Invariance {
