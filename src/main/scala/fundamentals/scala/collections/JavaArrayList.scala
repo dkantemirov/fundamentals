@@ -1,8 +1,6 @@
 package fundamentals.scala.collections
 
 import java.util
-import java.util.ArrayList
-
 import scala.collection.mutable.ArrayBuffer
 
 object JavaArrayList extends App {
@@ -16,6 +14,12 @@ object JavaArrayList extends App {
   while (i < arrList.size()) {
     println(arrList.get(i))
     i += 1
+  }
+
+  // Using an Iterator
+  val iterator = arrList.iterator()
+  while (iterator.hasNext) {
+    println(iterator.next())
   }
 
   // Alternative Scala mutable collection
