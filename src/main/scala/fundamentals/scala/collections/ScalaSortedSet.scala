@@ -1,6 +1,6 @@
 package fundamentals.scala.collections
 
-import fundamentals.java.collections.JavaSortedSet.Person
+import fundamentals.java.utils.Person
 
 import scala.collection.SortedSet
 

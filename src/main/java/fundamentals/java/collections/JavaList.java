@@ -1,6 +1,9 @@
 package fundamentals.java.collections;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * A list is an ordered collection of objects. Sometimes a list is also
@@ -51,7 +54,7 @@ public class JavaList {
         System.out.println("Size of List: " + count);
 
         // Print each element with its index
-        for(int i = 0; i < count; i++) {
+        for (int i = 0; i < count; i++) {
             String element = list.get(i);
             System.out.println("Index=" + i + ", Element=" + element);
         }
@@ -63,6 +66,7 @@ public class JavaList {
         list.remove("Donna"); // Same as list.remove(2);
         System.out.println("List (after removing Donna): " + list);
     }
+
     static void linkedList() {
         List<String> list = new LinkedList<>();
         list.add("Eric");
@@ -85,6 +89,7 @@ public class JavaList {
         System.out.println("Size of List: " + list.size());
         System.out.println("List: " + list);
     }
+
     public static void main(String[] args) {
         arrayList();
         linkedList();
