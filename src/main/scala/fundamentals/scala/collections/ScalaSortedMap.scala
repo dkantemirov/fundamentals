@@ -19,5 +19,6 @@ object ScalaSortedMap extends App {
   println(
     s"""First Key: $firstKey
       |Last Key: $lastKey
-    """.stripMargin)
+    """.stripMargin
+  )
 }
