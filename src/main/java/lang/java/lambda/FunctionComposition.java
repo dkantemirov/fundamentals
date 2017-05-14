@@ -3,7 +3,7 @@ package lang.java.lambda;
 import java.util.function.Function;
 
 public class FunctionComposition {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
         // Create two functions
         Function<Long, Long> square = x -> x * x;
         Function<Long, Long> addOne = x -> x + 1;

@@ -12,10 +12,12 @@ import java.util.ArrayList;
  * in some circumstances e.g. when serialising or garbage collecting, and it's worth being aware of this.
  */
 public class DoubleBraceInitialisation {
-    public static void main(String[] args) {
-        new ArrayList<Integer>() {{
-            add(1);
-            add(2);
-        }};
-    }
+  public static void main(String[] args) {
+    new ArrayList<Integer>() {
+      {
+        add(1);
+        add(2);
+      }
+    };
+  }
 }

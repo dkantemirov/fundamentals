@@ -21,19 +21,19 @@ import java.util.TreeSet;
  * </ul>
  */
 public class JavaSortedSet {
-    private static void treeSet() {
-        // Create a sorted set of some names
-        SortedSet<String> sortedNames = new TreeSet<>();
-        sortedNames.add("John");
-        sortedNames.add("Adam");
-        sortedNames.add("Eve");
-        sortedNames.add("Donna");
+  private static void treeSet() {
+    // Create a sorted set of some names
+    SortedSet<String> sortedNames = new TreeSet<>();
+    sortedNames.add("John");
+    sortedNames.add("Adam");
+    sortedNames.add("Eve");
+    sortedNames.add("Donna");
 
-        // Print the sorted set of names
-        System.out.println(sortedNames);
-    }
+    // Print the sorted set of names
+    System.out.println(sortedNames);
+  }
 
-    private static void treeSetWithCustomComparator() {
+  private static void treeSetWithCustomComparator() {
         // Create a sorted set sorted by id
         SortedSet<Person> personsById =
                 new TreeSet<>(Comparator.comparing(Person::getId));
@@ -62,44 +62,43 @@ public class JavaSortedSet {
         personsByName.forEach(System.out::println);
     }
 
-    public static void main(String[] args) {
-        treeSet();
-        treeSetWithCustomComparator();
-    }
+  public static void main(String[] args) {
+    treeSet();
+    treeSetWithCustomComparator();
+  }
 
 }
+
 
 /**
  * Accessing Subsets of a SortedSet
  */
 class SortedSetSubset {
-    public static void main(String[] args) {
-        // Create a sorted set of names
-        SortedSet<String> names = new TreeSet<>();
-        names.add("John");
-        names.add("Adam");
-        names.add("Eve");
-        names.add("Donna");
-        // Print the sorted set
-        System.out.println("Sorted Set: " + names);
+  public static void main(String[] args) {
+    // Create a sorted set of names
+    SortedSet<String> names = new TreeSet<>();
+    names.add("John");
+    names.add("Adam");
+    names.add("Eve");
+    names.add("Donna");
+    // Print the sorted set
+    System.out.println("Sorted Set: " + names);
 
-        // Print the first and last elements in the sorted set
-        System.out.println("First: " + names.first());
-        System.out.println("Last: " + names.last());
+    // Print the first and last elements in the sorted set
+    System.out.println("First: " + names.first());
+    System.out.println("Last: " + names.last());
 
-        SortedSet ssBeforeDonna = names.headSet("Donna");
-        System.out.println("Head Set Before Donna: " + ssBeforeDonna);
+    SortedSet ssBeforeDonna = names.headSet("Donna");
+    System.out.println("Head Set Before Donna: " + ssBeforeDonna);
 
-        SortedSet ssBetwenDonnaAndJohn = names.subSet("Donna", "John");
-        System.out.println("Subset between Donna and John (exclusive): " +
-                ssBetwenDonnaAndJohn);
+    SortedSet ssBetwenDonnaAndJohn = names.subSet("Donna", "John");
+    System.out.println("Subset between Donna and John (exclusive): " + ssBetwenDonnaAndJohn);
 
-        // Note the trick "John" + "\0" to include "John" in the subset
-        SortedSet ssBetwenDonnaAndJohn2 = names.subSet("Donna", "John" + "\0");
-        System.out.println("Subset between Donna and John (Inclusive): " +
-                ssBetwenDonnaAndJohn2);
+    // Note the trick "John" + "\0" to include "John" in the subset
+    SortedSet ssBetwenDonnaAndJohn2 = names.subSet("Donna", "John" + "\0");
+    System.out.println("Subset between Donna and John (Inclusive): " + ssBetwenDonnaAndJohn2);
 
-        SortedSet ssDonnaAndAfter = names.tailSet("Donna");
-        System.out.println("Subset from Donna onwards: " + ssDonnaAndAfter);
-    }
+    SortedSet ssDonnaAndAfter = names.tailSet("Donna");
+    System.out.println("Subset from Donna onwards: " + ssDonnaAndAfter);
+  }
 }

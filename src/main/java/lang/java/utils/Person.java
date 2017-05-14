@@ -1,50 +1,50 @@
 package lang.java.utils;
 
 public class Person {
-    private int id;
-    private String name;
+  private int id;
+  private String name;
 
-    public Person(int id, String name) {
-        this.id = id;
-        this.name = name;
+  public Person(int id, String name) {
+    this.id = id;
+    this.name = name;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (!(o instanceof Person)) {
+      return false;
     }
 
-    public int getId() {
-        return id;
-    }
+    // id must be the same for two Persons to be equal
+    Person p = (Person) o;
+    return this.id == p.getId();
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  }
 
-    public String getName() {
-        return name;
-    }
+  @Override
+  public int hashCode() {
+    // A trivial implementaiton
+    return this.id;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof Person)) {
-            return false;
-        }
-
-        // id must be the same for two Persons to be equal
-        Person p = (Person) o;
-        return this.id == p.getId();
-
-    }
-
-    @Override
-    public int hashCode() {
-        // A trivial implementaiton
-        return this.id;
-    }
-
-    @Override
-    public String toString() {
-        return "(" + id + ", " + name + ")";
-    }
+  @Override
+  public String toString() {
+    return "(" + id + ", " + name + ")";
+  }
 }

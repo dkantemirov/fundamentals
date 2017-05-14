@@ -9,7 +9,7 @@ import java.util.function.IntFunction;
  * expression that represents an instance of a functional interface.
  */
 public class LambdaExpressions {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
         // Takes an int parameter and returns the parameter value incremented by 1
         IntFunction inc = (int x) -> x + 1;
         IntFunction conciseInc = x -> x + 1;

@@ -1,14 +1,10 @@
 package lang.scala.core
 
-import lang.java.core.Variance
-
 trait Identification
 class User(val name: String) extends Identification
 class SuperUser(name: String) extends User(name)
 
 /**
- * Boilerplate Java analog [[Variance]].
- *
  * Scala supports variance annotations of type parameters of generic classes,
  * to allow them to be covariant, contravariant, or invariant if no annotations are used.
  */

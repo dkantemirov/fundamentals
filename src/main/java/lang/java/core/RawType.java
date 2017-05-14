@@ -8,15 +8,15 @@ import lang.java.utils.Wrapper;
  * the existing code that uses the non-generic version of the class should keep working.
  */
 public class RawType {
-    public static void main(String[] args) {
-        // An unchecked warning
-        // Wrapper rawType = new Wrapper("Hello");
+  public static void main(String[] args) {
+    // An unchecked warning
+    // Wrapper rawType = new Wrapper("Hello");
 
-        Wrapper<String> genericType = new Wrapper<>("Hello");
+    Wrapper<String> genericType = new Wrapper<>("Hello");
 
-        // An unchecked warning
-        // genericType = rawType;
+    // An unchecked warning
+    // genericType = rawType;
 
-        System.out.println(genericType.getClass());
-    }
+    System.out.println(genericType.getClass());
+  }
 }

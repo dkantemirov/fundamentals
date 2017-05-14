@@ -4,113 +4,111 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class InnerClass {
-    /**
-     * Member Inner Class
-     */
-    public class Car {
-        private int year;
+  /**
+   * Member Inner Class
+   */
+  public class Car {
+    private int year;
 
-        // Inner class
-        class Tire {
-            private double radius;
+    // Inner class
+    class Tire {
+      private double radius;
 
-            Tire(double radius) {
-                this.radius = radius;
-            }
+      Tire(double radius) {
+        this.radius = radius;
+      }
 
-            double getRadius() {
-                return radius;
-            }
-        }
-
-        Car(int year) {
-            this.year = year;
-        }
-
-        public int getYear() {
-            return year;
-        }
+      double getRadius() {
+        return radius;
+      }
     }
 
-    /**
-     * Local Inner Class
-     */
-    public class TitleList {
-        private ArrayList<String> titleList = new ArrayList<>();
-
-        public void addTitle(String title) {
-            titleList.add(title);
-        }
-
-        public void removeTitle(String title) {
-            titleList.remove(title);
-        }
-
-        public Iterator<String> titleIterator() {
-            // A local inner class - TitleIterator
-            class TitleIterator implements Iterator<String> {
-                int count = 0;
-
-                @Override
-                public boolean hasNext() {
-                    return (count < titleList.size());
-                }
-
-                @Override
-                public String next() {
-                    return titleList.get(count++);
-                }
-            }
-
-            // Create an object of the local inner class and return the reference
-            TitleIterator titleIterator = new TitleIterator();
-            return titleIterator;
-        }
+    Car(int year) {
+      this.year = year;
     }
 
-    /**
-     * Anonymous Inner Class
-     */
-    public class TitleListWithAnonymousInnerClass {
-        private ArrayList<String> titleList = new ArrayList<>();
+    public int getYear() {
+      return year;
+    }
+  }
 
-        public void addTitle(String title) {
-            titleList.add(title);
-        }
+  /**
+   * Local Inner Class
+   */
+  public class TitleList {
+    private ArrayList<String> titleList = new ArrayList<>();
 
-        public void removeTitle(String title) {
-            titleList.remove(title);
-        }
-
-        public Iterator<String> titleIterator() {
-            // An anonymous inner class
-            Iterator<String> iterator =
-                    new Iterator<String>() {
-                        int count = 0;
-
-                        @Override
-                        public boolean hasNext() {
-                            return (count < titleList.size());
-                        }
-
-                        @Override
-                        public String next() {
-                            return titleList.get(count++);
-                        }
-                    }; // Anonymous inner class ends here
-
-            return iterator;
-        }
+    public void addTitle(String title) {
+      titleList.add(title);
     }
 
-    /**
-     * Creating Objects of Inner Classes
-     */
-    public static void main(String[] args) {
-        InnerClass innerClass = new InnerClass();
-        Car car = innerClass.new Car(2015);
-        Car.Tire tire = car.new Tire(15.0);
-        System.out.println(tire.getRadius());
+    public void removeTitle(String title) {
+      titleList.remove(title);
     }
+
+    public Iterator<String> titleIterator() {
+      // A local inner class - TitleIterator
+      class TitleIterator implements Iterator<String> {
+        int count = 0;
+
+        @Override
+        public boolean hasNext() {
+          return (count < titleList.size());
+        }
+
+        @Override
+        public String next() {
+          return titleList.get(count++);
+        }
+      }
+
+      // Create an object of the local inner class and return the reference
+      TitleIterator titleIterator = new TitleIterator();
+      return titleIterator;
+    }
+  }
+
+  /**
+   * Anonymous Inner Class
+   */
+  public class TitleListWithAnonymousInnerClass {
+    private ArrayList<String> titleList = new ArrayList<>();
+
+    public void addTitle(String title) {
+      titleList.add(title);
+    }
+
+    public void removeTitle(String title) {
+      titleList.remove(title);
+    }
+
+    public Iterator<String> titleIterator() {
+      // An anonymous inner class
+      Iterator<String> iterator = new Iterator<String>() {
+        int count = 0;
+
+        @Override
+        public boolean hasNext() {
+          return (count < titleList.size());
+        }
+
+        @Override
+        public String next() {
+          return titleList.get(count++);
+        }
+      }; // Anonymous inner class ends here
+
+      return iterator;
+    }
+  }
+
+  /**
+   * Creating Objects of Inner Classes
+   */
+  public static void main(String[] args) {
+    InnerClass innerClass = new InnerClass();
+    Car car = innerClass.new Car(2015);
+    Car.Tire tire = car.new Tire(15.0);
+    System.out.println(tire.getRadius());
+  }
 }
-

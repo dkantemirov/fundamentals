@@ -3,32 +3,32 @@ package lang.java.core;
 import lang.java.utils.Wrapper;
 
 public class UnboundedWildcard {
-    private static void printDetails(Wrapper<?> wrapper) { // unbounded wildcard
-        // Can assign get() return value to Object
-        Object value = wrapper.get();
-        String className = null;
+  private static void printDetails(Wrapper<?> wrapper) { // unbounded wildcard
+    // Can assign get() return value to Object
+    Object value = wrapper.get();
+    String className = null;
 
-        if (value != null) {
-            className = value.getClass().getName();
-        }
-
-        System.out.println("Class: " + className);
-        System.out.println("Value: " + value);
+    if (value != null) {
+      className = value.getClass().getName();
     }
 
-    public static void main(String[] args) {
-        Wrapper<String> stringWrapper = new Wrapper<String>("Hello");
-        stringWrapper.set("a string");
+    System.out.println("Class: " + className);
+    System.out.println("Value: " + value);
+  }
 
-        Wrapper<Object> objectWrapper = new Wrapper<Object>(new Object());
-        objectWrapper.set(new Object()); // set another object
+  public static void main(String[] args) {
+    Wrapper<String> stringWrapper = new Wrapper<String>("Hello");
+    stringWrapper.set("a string");
 
-        // Use a String object with objectWrapper
-        objectWrapper.set("a string"); // ok
+    Wrapper<Object> objectWrapper = new Wrapper<Object>(new Object());
+    objectWrapper.set(new Object()); // set another object
 
-        // objectWrapper = stringWrapper; !error
+    // Use a String object with objectWrapper
+    objectWrapper.set("a string"); // ok
 
-        printDetails(stringWrapper);
-        printDetails(objectWrapper);
-    }
+    // objectWrapper = stringWrapper; !error
+
+    printDetails(stringWrapper);
+    printDetails(objectWrapper);
+  }
 }

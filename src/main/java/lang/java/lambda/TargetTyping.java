@@ -2,13 +2,15 @@ package lang.java.lambda;
 
 @FunctionalInterface
 interface Adder {
-    double add(double n1, double n2);
+  double add(double n1, double n2);
 }
+
 
 @FunctionalInterface
 interface Joiner {
-    String join(String s1, String s2);
+  String join(String s1, String s2);
 }
+
 
 /**
  * The compiler infers the type of a lambda expression.
@@ -17,7 +19,7 @@ interface Joiner {
  * context is known as target typing.
  */
 public class TargetTyping {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
         // Creates an Adder using a lambda expression
         Adder adder = (x, y) -> x + y;
 
@@ -39,26 +41,28 @@ public class TargetTyping {
     }
 }
 
-class LambdaUtil {
-    void testAdder(Adder adder) {
-        double x = 190.90;
-        double y = 8.50;
-        double sum = adder.add(x, y);
-        System.out.print("Using an Adder:");
-        System.out.println(x + " + " + y + " = " + sum);
-    }
 
-    void testJoiner(Joiner joiner) {
-        String s1 = "Hello";
-        String s2 = "World";
-        String s3 = joiner.join(s1,s2);
-        System.out.print("Using a Joiner:");
-        System.out.println("\"" + s1 + "\" + \"" + s2 + "\" = \"" + s3 + "\"");;
-    }
+class LambdaUtil {
+  void testAdder(Adder adder) {
+    double x = 190.90;
+    double y = 8.50;
+    double sum = adder.add(x, y);
+    System.out.print("Using an Adder:");
+    System.out.println(x + " + " + y + " = " + sum);
+  }
+
+  void testJoiner(Joiner joiner) {
+    String s1 = "Hello";
+    String s2 = "World";
+    String s3 = joiner.join(s1, s2);
+    System.out.print("Using a Joiner:");
+    System.out.println("\"" + s1 + "\" + \"" + s2 + "\" = \"" + s3 + "\"");;
+  }
 }
 
+
 class LambdaUtilTest {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
         LambdaUtil util = new LambdaUtil();
 
         // Call the testAdder() method

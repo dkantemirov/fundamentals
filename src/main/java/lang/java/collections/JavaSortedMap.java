@@ -5,7 +5,7 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 
 public class JavaSortedMap {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
         // Sort entries on key's length and then on keys ignoring case
         Comparator<String> keyComparator =
                 Comparator.comparing(String::length)

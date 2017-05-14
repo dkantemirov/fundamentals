@@ -4,9 +4,9 @@ object Polymorphism
 
 /**
  * Ad hoc polymorphism:
- * 1. Overloading Polymorphism.
- * 2. Coercion Polymorphism.
- * 3. Implicit class.
+ * - Overloading Polymorphism.
+ * - Coercion Polymorphism.
+ * - Implicit class.
  */
 object OverloadingPolymorphism extends App {
   def get(v: Int): Int = v

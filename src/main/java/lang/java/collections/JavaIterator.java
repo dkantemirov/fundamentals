@@ -13,30 +13,36 @@ import java.util.List;
  * Internally, they all use an Iterator .
  */
 public class JavaIterator {
-    private static void iterator() {
-        List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
-        Iterator<Integer> iterator = list.iterator();
-        while (iterator.hasNext()) System.out.println(iterator.next());
-    }
-    // Java 8
-    private static void forEachRemaining() {
+  private static void iterator() {
+    List<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+    Iterator<Integer> iterator = list.iterator();
+    while (iterator.hasNext())
+      System.out.println(iterator.next());
+  }
+
+  // Java 8
+  private static void forEachRemaining() {
         List<String> names = new ArrayList<>(Arrays.asList("a1", "a2"));
         Iterator<String> nameIterator = names.iterator();
         nameIterator.forEachRemaining(System.out::println);
     }
-    private static void forEachLoop() {
-        List<String> names = new ArrayList<>(Arrays.asList("b1", "b2", "b3"));
-        for (String name : names) System.out.println(name);
-    }
-    // Java 8
-    private static void forEach() {
+
+  private static void forEachLoop() {
+    List<String> names = new ArrayList<>(Arrays.asList("b1", "b2", "b3"));
+    for (String name : names)
+      System.out.println(name);
+  }
+
+  // Java 8
+  private static void forEach() {
         List<String> names = new ArrayList<>(Arrays.asList("c1", "c2", "c3"));
         names.forEach(System.out::println);
     }
-    public static void main(String[] args) {
-       iterator();
-       forEachRemaining();
-       forEachLoop();
-       forEach();
-    }
+
+  public static void main(String[] args) {
+    iterator();
+    forEachRemaining();
+    forEachLoop();
+    forEach();
+  }
 }

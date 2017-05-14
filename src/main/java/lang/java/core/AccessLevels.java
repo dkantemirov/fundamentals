@@ -1,28 +1,32 @@
 package lang.java.core;
 
 class AccessLevelsForClassMembers {
-    void defaultLevel() {
+  void defaultLevel() {
 
-    }
-    public void publicLevel() {
+  }
 
-    }
-    private void privateLevel() {
+  public void publicLevel() {
 
-    }
-    protected void protectedLevel() {
+  }
 
-    }
+  private void privateLevel() {
+
+  }
+
+  protected void protectedLevel() {
+
+  }
 }
 
+
 class AccessLevels {
-    class DefaultAccessForClass {
+  class DefaultAccessForClass {
 
-    }
-    public class PublicClass {
+  }
+  public class PublicClass {
 
-    }
-    private class PrivateClass {
+  }
+  private class PrivateClass {
 
-    }
+  }
 }

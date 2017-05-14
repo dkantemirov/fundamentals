@@ -3,15 +3,10 @@ package lang.scala.core
 trait Severity
 
 object Severity {
-
   case object LOW extends Severity
-
   case object MEDIUM extends Severity
-
   case object HIGH extends Severity
-
   case object URGENT extends Severity
-
 }
 
 /**
