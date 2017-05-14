@@ -1,6 +1,7 @@
 package fundamentals.java.collections;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.WeakHashMap;
 
@@ -8,7 +9,7 @@ import java.util.WeakHashMap;
  *  Scala Map {@link fundamentals.scala.collections.ScalaMap}
  */
 public class JavaMap {
-    static void hashMap() {
+    private static void hashMap() {
         Map<String, String> map = new HashMap<>();
         map.put("John", "(342)113-9878");
         map.put("Richard", "(245)890-9045");
@@ -26,8 +27,7 @@ public class JavaMap {
         System.out.println("Donna phone: " + donnaPhone);
         System.out.println("Donna key is removed: " + map.remove("Donna"));
 
-        // Java 8. Use the forEach() method of the Map interface
-        map.forEach((k, v) -> System.out.println("key=" + k + ", value=" + v));
+        print(map);
     }
 
     /**
@@ -39,7 +39,7 @@ public class JavaMap {
      * you want to maintain a cache of key-value pairs and you do not mind if your
      * key-value pairs are removed from the Map by the garbage collector.
      */
-    static void weakHashMap() {
+    private static void weakHashMap() {
         Map<String, String> map = new WeakHashMap<>();
         map.put("John", "(342)113-9878");
         map.put("Eric", "(245)890-9045");
@@ -58,7 +58,7 @@ public class JavaMap {
             else return v;
         });
 
-        map.forEach((k, v) -> System.out.println("key=" + k + ", value=" + v));
+        print(map);
     }
 
     /**
@@ -68,12 +68,24 @@ public class JavaMap {
      * iterate over entries in a Map in its insertion order, you need to use
      * LinkedHashMap instead of HashMap as the implementation class.
      */
-    static void linkedHashMap() {
-
+    private static void linkedHashMap() {
+        Map<String, String> map = new LinkedHashMap<>();
+        map.put("Piter", "(342)890-7771");
+        map.put("Pavel", "(245)890-5611");
+        map.put("Bob", "(205)678-9781");
+        map.put("Pol", "(205)678-9712");
+        print(map);
     }
 
     public static void main(String[] args) {
         hashMap();
         weakHashMap();
+        linkedHashMap();
     }
+
+    private static void print(Map<String, String> map) {
+        // Java 8. Use the forEach() method of the Map interface
+        map.forEach((k, v) -> System.out.println("key=" + k + ", value=" + v));
+    }
+
 }
