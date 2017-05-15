@@ -28,5 +28,6 @@ object CreatingActorWithProps extends App {
   val myActor: ActorRef = system.actorOf(MyActor.props("Ok!"), "myactor")
   myActor ! Greeting(system.name)
   myActor ! Goodbye
+  system.terminate()
 }
 

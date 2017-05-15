@@ -25,5 +25,6 @@ object CreatingActor extends App {
   val myActor: ActorRef = system.actorOf(Props[MyActor], "myactor")
   myActor ! Greeting(system.name)
   myActor ! Goodbye
+  system.terminate()
 }
 
