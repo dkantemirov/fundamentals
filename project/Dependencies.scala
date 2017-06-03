@@ -9,7 +9,8 @@ object Dependencies {
     val groupID = "com.typesafe.akka"
     val actor = groupID %% "akka-actor" % akkaVersion
     val persistence = groupID %% "akka-persistence" % akkaVersion
-    val all = Seq(actor, persistence)
+    val stream = groupID %% "akka-stream" % akkaVersion
+    val all = Seq(actor, persistence, stream)
   }
 
   val scalameter = "com.storm-enroute" %% "scalameter" % scalameterVersion
