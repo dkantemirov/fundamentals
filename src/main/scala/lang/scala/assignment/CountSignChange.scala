@@ -1,8 +1,5 @@
 package lang.scala.assignment
 
-/**
-  * Count sign change in seq
-  */
 object CountSignChange {
   def count(s: Seq[Int]): Int = {
     def isPositive(v: Int) = if (v < 0) false else true
